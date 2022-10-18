@@ -20,6 +20,10 @@
 考虑到同学们的训练资源各不相同，我们鼓励大家在1w，5w，10w三种训练集规格中**选择一种**进行实验；相应的训练集均以提前切分好，放在网盘以供大家下载。
 
 ## 模型介绍
-baseline模型基于预训练模型中常用的掩码语言模型（Masked Language Modeling）实现。我们将`#idiom#`替换为`[MASK][MASK][MASK][MASK]`，通过LM head输出每个`[MASK]`处的token在候选字上的概率分布，并以此选择概率最高的成语。具体实现代码参见`model.py`。例如对于上方的例子，第一个`[MASK]`处的token将会通过LM head得到所有候选成语第一个字上（明，添，一，残，杂，心，打）的概率分布。
+baseline模型基于预训练模型中常用的掩码语言模型（Masked Language Modeling）实现。
+
+我们将`#idiom#`替换为`[MASK][MASK][MASK][MASK]`，通过LM head输出每个`[MASK]`处的token在候选字上的概率分布，并以此选择概率最高的成语。具体实现代码参见`model.py`。
+
+例如对于上方的例子，第一个`[MASK]`处的token将会通过LM head得到所有候选成语第一个字上（明，添，一，残，杂，心，打）的概率分布。
 
 
