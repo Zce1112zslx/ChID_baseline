@@ -20,7 +20,7 @@
 考虑到同学们的训练资源各不相同，我们鼓励大家在1w，5w，10w三种训练集规格中**选择一种**进行实验；相应的训练集均以提前切分好，放在网盘以供大家下载。
 
 ## 模型介绍
-baseline模型基于预训练模型中常用的掩码语言模型（Masked Language Modeling）实现。
+baseline模型基于预训练模型中常用的掩码语言模型（Masked Language Modeling）实现，采用中文roberta作为backbone。
 
 我们将`#idiom#`替换为`[MASK][MASK][MASK][MASK]`，通过LM head输出每个`[MASK]`处的token在候选字上的概率分布，并以此选择概率最高的成语。
 
@@ -32,6 +32,7 @@ baseline模型基于预训练模型中常用的掩码语言模型（Masked Langu
 
 
 ## 实验结果
+我们提供了我们的baseline模型在不同训练集规模下的准确率（Accuracy）。0代表zero-shot实验，直接使用未经任何fine-tuning的预训练模型进行预测；同学们使用对应规模训练集时可以和对应的baseline结果进行比较。
 
 | #train data |  dev  |  test |
 |-------------|:-----:|:-----:|
@@ -41,8 +42,39 @@ baseline模型基于预训练模型中常用的掩码语言模型（Masked Langu
 | 10w         | 74.49 | 74.42 |
 | full (50w)  | 80.72 | 81.11 |
 
+我们也比较了我们的baseline模型和原论文中基于LSTM的Attentive Reader方法以及人工评测（Human）的表现。baseline相较于human的水平仍有待提升。
+
 | Model                   |  dev  |  test |
 |-------------------------|:-----:|:-----:|
 | Ours (Roberta)          | 80.72 | 81.11 |
 | Attentive Reader (LSTM) | 72.7  | 72.4  |
 | Human                   | -     | 87.1  |
+
+## 作业要求
+本次作业要求单人或组队完成（最多3人），请每个小组根据任务的特点设计实验。
+
+最终要求每组同学在学期末进行课堂展示，并且提交自己的实验报告和项目代码到课程公邮jsyyyxpku2022@163.com。
+
+大作业的评分将基于课堂展示、实验报告以及模型的表现进行综合评测。
+### 实验报告要求
+实验报告中应该包含以下内容：
+1. 实验目的（阐述任务）
+2. 实验原理（描述模型）
+3. 实验内容（描述实验步骤，重视可复现性）
+4. 实验结果与分析 （描述实验结果并对结果或case进行分析）
+5. 实验过程总结和感想（每个组员都要写）
+6. 实验分工（写明每个组员的工作量）
+### 其他要求与建议
+1. 项目作弊会被记0分，包括但不限于抄袭代码、实验造假等。允许使用开源代码，但请在报告中标注哪部分使用了开源代码，并标明来源
+2. 禁止以任何形式使用测试集的标签信息
+3. 实验结果不是唯一的评判标准，针对任务特点的改进，对失败尝试的深入分析都是加分项
+4. 鼓励大家在项目上尝试一些创新的思路，包括但不限于模型的改动，任务形式的转化，从数据本身出发的思考等；在训练数据有限的情况下，如何引入外部知识也是一个值得尝试的方向。
+## 参考文献
+ChID: A Large-scale Chinese IDiom Dataset for Cloze Test. Chujie Zheng, Minlie Huang, Aixin Sun. ACL (1) 2019: 778-787
+It's Not Just Size That Matters: Small Language Models Are Also Few-Shot Learners. Timo Schick, Hinrich Schütze. NAACL-HLT 2021: 2339-2352
+
+## 有用的网站
+https://github.com/chujiezheng/ChID-Dataset
+https://github.com/pwxcoo/chinese-xinhua
+https://github.com/by-syk/chinese-idiom-db
+https://huggingface.co/docs/transformers/index
