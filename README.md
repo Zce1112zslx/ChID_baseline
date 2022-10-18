@@ -70,11 +70,11 @@ baseline模型基于预训练模型中常用的掩码语言模型（Masked Langu
 3. 实验结果不是唯一的评判标准，针对任务特点的改进，对失败尝试的深入分析都是加分项
 4. 鼓励大家在项目上尝试一些创新的思路，包括但不限于模型的改动，任务形式的转化，从数据本身出发的思考等；在训练数据有限的情况下，如何引入外部知识也是一个值得尝试的方向。
 ## 参考文献
-ChID: A Large-scale Chinese IDiom Dataset for Cloze Test. Chujie Zheng, Minlie Huang, Aixin Sun. ACL (1) 2019: 778-787
-It's Not Just Size That Matters: Small Language Models Are Also Few-Shot Learners. Timo Schick, Hinrich Schütze. NAACL-HLT 2021: 2339-2352
+* ChID: A Large-scale Chinese IDiom Dataset for Cloze Test. Chujie Zheng, Minlie Huang, Aixin Sun. ACL (1) 2019: 778-787
+* It's Not Just Size That Matters: Small Language Models Are Also Few-Shot Learners. Timo Schick, Hinrich Schütze. NAACL-HLT 2021: 2339-2352
 
 ## 有用的网站
-https://github.com/chujiezheng/ChID-Dataset
-https://github.com/pwxcoo/chinese-xinhua
-https://github.com/by-syk/chinese-idiom-db
-https://huggingface.co/docs/transformers/index
+* https://github.com/chujiezheng/ChID-Dataset
+* https://github.com/pwxcoo/chinese-xinhua
+* https://github.com/by-syk/chinese-idiom-db
+* https://huggingface.co/docs/transformers/index
