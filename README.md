@@ -12,6 +12,19 @@
 ```
 如上所示，在`content`中有两处`#idiom#`标志。以第一个标志处为例，模型要从候选成语`["明明白白", "添油加醋", "一目了然", "残兵败将", "杂乱无章", "心中有数", "打抱不平"]`选择最合适的成语`一目了然`填入此处。
 
+## requirements
+```
+accelerate==0.7.1
+allennlp==2.9.1
+datasets==2.5.1
+evaluate==0.2.2
+huggingface_hub==0.10.0
+numpy==1.22.3
+torch==1.11.0
+tqdm==4.56.0
+transformers==4.16.2
+```
+
 ## 数据集下载
 本文数据集ChID由 **[ChID: A Large-scale Chinese IDiom Dataset for Cloze Test](https://www.aclweb.org/anthology/P19-1075)** 提出。训练集包含句子50w条，验证集和测试集各有2w条句子。
 
